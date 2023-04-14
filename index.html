@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Super Robot</title>
+    <link rel="stylesheet" href="style.css">
+
+    <script>
+        function showImage(img) {
+            document.getElementById("enlargedImg").src = img.src;
+            document.getElementById("overlay").style.display = "block";
+            document.getElementById("imageContainer").style.display = "block";
+            document.addEventListener('keydown', closeOnEsc);
+        }
+
+        function hideImage() {
+            document.getElementById("overlay").style.display = "none";
+            document.getElementById("imageContainer").style.display = "none";
+            document.removeEventListener('keydown', closeOnEsc);
+        }
+
+        function closeOnEsc(e) {
+            if (e.keyCode === 27) {
+                hideImage();
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        <h1>Super Robot</h1>
+    </header>
+    <main>
+        <section>
+            <article>
+                <h2>Scénář</h2>
+                <p>Super Robot se v roce 3022 vydá na cestu do vesmíru. Po ztrátě jednoho z motorů se zřítí na planetu.
+                    Jedná se o planetu Zemi, která je již nekolik set let obydlena obrovskými, zabijáckými pavouky.
+
+                    V roce 2050 lide dokázali zvětšit pavouky až o 250%, aniž by věděli, jaké následky to bude mít.
+                    Nikdo z lidí toto nepřežil. Super Robot musí co nejrychleji kontaktovat nejbližší vesmírnou lod' a
+                    zavolat o pomoc.
+
+                    Jeho jedinou misí je se co nejrychleji dostat pryč, aniž by musel obětovat svůj život.
+                </p>
+            </article>
+        </section>
+
+        <section>
+            <article>
+                <h2>Level Design</h2>
+                <h3>První scéna</h3>
+                <p>První scéna se odehrává venku u vodopádu, kde Super Robot narazil se svou vesmírnou lodí.</p>
+                <br>
+                <h3>Druhá scéna</h3>
+                <p>Druhá scéna se odehrává v opuštěné laboratoři, kde lidé před několika desítkami let prováděli pokusy
+                    na pavoucích.</p>
+            </article>
+        </section>
+
+        <section>
+            <article>
+                <h2>Ovládání</h2>
+                <p>Pohyb Super Robota - pomocí kláves W, A, S, D</p>
+                <p>Útok/Střelba - levé tlačítko myši</p>
+                <p>Rozhlížení - pohybem myši</p>
+                <p>Resetování hry - klávesa R</p>
+                <p>Otevření/Zavření Main menu - pomocí klávesy ESC</p>
+                <p>Pohyb v Main menu - pohybem a kliknutím myši</p>
+            </article>
+        </section>
+
+        <section>
+            <article>
+                <h2>Galerie</h2>
+                <div class="gallery">
+                    <img src="img/Game1.png" alt="Game Image" onclick="showImage(this)">
+                    <img src="img/Game2.png" alt="Game Image" onclick="showImage(this)">
+                    <img src="img/Game3.png" alt="Game Image" onclick="showImage(this)">
+                    <img src="img/Game4.png" alt="Game Image" onclick="showImage(this)">
+                    <img src="img/Game5.png" alt="Game Image" onclick="showImage(this)">
+                    <img src="img/Game6.png" alt="Game Image" onclick="showImage(this)">
+                </div>
+                <div id="overlay" onclick="hideImage()"></div>
+                <div id="imageContainer"><img id="enlargedImg"></div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 Super Robot. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
